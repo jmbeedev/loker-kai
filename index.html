@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lowongan Kerja Rekrutmen PT. KAI Terbaru 2025 Terbuka Untuk Semua Lulusan Baik Fresh Graduate dan Berpengalaman.">
+    <meta name="keywords" content="Loker KAI, Rekrutmen KAI, Lowongan Kerja KAI, PT KAI, Recruitment KAI">
+    <meta name="author" content="PT. KAI Indonesia">
+    <title>Lowongan Kerja KAI | Rekrutmen KAI Terbaru 2025</title>
+    <style>
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .logo a {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 30px; /* Increased margin to add space between logo and menu */
+    animation: logoColorChange 4s infinite; /* Animation to change logo color */
+}
+
+@keyframes logoColorChange {
+    0% {
+        color: white;
+    }
+    25% {
+        color: #FF6200;
+    }
+    50% {
+        color: white;
+    }
+    75% {
+        color: #FF6200;
+    }
+    100% {
+        color: white;
+    }
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center menu items */
+    margin-top: 0;
+    padding: 0;
+}
+
+header ul li {
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+header ul li:first-child {
+    margin-left: 0; /* Remove left margin from the first item */
+}
+
+header ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+header ul li a:hover {
+    color: #FF6200;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/uploads/1413387158190559d80f7/6108b580?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+}
+
+.hero-content {
+    z-index: 1;
+    padding: 20px;
+    color: white;
+    max-width: 80%;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.cta-btn {
+    background-color: #FF740F;
+    color: white;
+    padding: 12px 35px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #D4600D;
+    transform: scale(1.05);
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto; /* Menambahkan scroll pada modal jika konten lebih panjang */
+}
+
+/* Konten Modal */
+.modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    width: 70%;
+    max-width: 600px;
+    max-height: 80vh; /* Menentukan batas tinggi modal */
+    overflow-y: auto; /* Scroll vertikal jika konten melebihi batas */
+    border-radius: 10px;
+}
+
+/* Tombol Close */
+.close {
+    color: #FF6200;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #000000;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+footer ul li a:hover {
+    color: #FF6200;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .cta-btn {
+        padding: 10px 30px;
+        font-size: 1.1rem;
+    }
+
+    header .logo a {
+        font-size: 1.7rem;
+    }
+
+    header ul {
+        flex-direction: column;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    header ul li {
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cta-btn {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+
+    header .logo a {
+        font-size: 1.5rem;
+    }
+
+    header ul {
+        flex-direction: column;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    header ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .cta-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+    header .logo a {
+        font-size: 1.3rem;
+    }
+
+    header ul {
+        flex-direction: column;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    header ul li {
+        margin-left: 0;
+        margin-bottom: 8px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+        <div class="logo">
+            <a href="https://logo.clearbit.com/kai.id" target="_blank" style="font-size: 1.8rem; color: white; text-decoration: none; font-weight: bold;">PT. KAI INDONESIA</a>
+        </div>
+            <ul>
+                <li><a href="#" id="aboutBtn">About Us</a></li>
+                <li><a href="#" id="servicesBtn">Services</a></li>
+                <li><a href="#" id="contactBtn">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>REKRUTMEN PT.KAI 2025</h1>
+            <p>Siapkan CV dan Resume Terbaru Anda dan Segera Lamar Sekarang.</p>
+            <a href="#" id="applyBtn" class="cta-btn">APPLY NOW</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <ul>
+            <li><a href="#" id="aboutFooterBtn">About Us</a></li>
+            <li><a href="#" id="privacyFooterBtn">Privacy Policy</a></li>
+            <li><a href="#" id="termsFooterBtn">Terms & Conditions</a></li>
+        </ul>
+        <p>&copy; 2025 PT. KAI INDONESIA</p>
+    </footer>
+
+    <!-- Modal for About Us -->
+    <div id="modal-about" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+<h2>About Us</h2>
+<p>PT. Kereta Api Indonesia (Persero), commonly known as PT. KAI, is a state-owned enterprise responsible for operating the railway transportation system in Indonesia. Established on October 28, 1945, PT. KAI is one of the oldest and largest transportation companies in the country, playing a critical role in connecting cities and regions, as well as facilitating the movement of goods and passengers across the archipelago.</p>
+        </div>
+    </div>
+
+    <!-- Modal for Services -->
+    <div id="modal-services" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Our Services</h2>
+<p>PT. Kereta Api Indonesia (Persero) offers a range of services designed to meet the diverse transportation needs of individuals and businesses across Indonesia. We are committed to providing reliable, efficient, and sustainable transport solutions to enhance connectivity nationwide.</p>
+
+<h3>1. Passenger Services</h3>
+<p>We operate both long-distance and commuter rail services, connecting major cities and metropolitan areas. Our passenger services are designed to offer comfort, safety, and timely arrivals, with various classes of service to accommodate different needs and preferences.</p>
+
+<h3>2. Freight Services</h3>
+<p>PT. KAI offers efficient and reliable freight transportation solutions for businesses, supporting the movement of industrial and agricultural goods across Indonesia. Our freight services are designed to ensure timely delivery at competitive rates, optimizing logistics operations for our clients.</p>
+        </div>
+    </div>
+
+    <!-- Modal for Contact -->
+    <div id="modal-contact" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+<h2>Contact Us</h2>
+<p>If you have any questions or need assistance, please reach out to us.</p>
+
+<h3>Customer Service</h3>
+<ul>
+    <li><strong>Email:</strong> <a href="mailto:info@kai.id">info@kai.id</a></li>
+    <li><strong>Phone:</strong> +62821-3888-8855</li>
+</ul>
+
+<h3>Head Office</h3>
+<p><strong>PT. Kereta Api Indonesia (Persero)</strong><br>
+Jl. Perkeretaapian No. 1, Jakarta, Indonesia</p>
+
+<h3>Follow Us</h3>
+<ul>
+    <li><strong>Facebook:</strong> <a href="https://www.facebook.com/PT.KAI" target="_blank">PT. Kereta Api Indonesia</a></li>
+    <li><strong>Instagram:</strong> <a href="https://www.instagram.com/ptkai_id" target="_blank">@ptkai_id</a></li>
+</ul>
+        </div>
+    </div>
+
+    <!-- Modal for Footer About Us -->
+    <div id="modal-footer-about" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+<h2>About Us</h2>
+<p>PT. Kereta Api Indonesia (Persero) is a state-owned enterprise established in 1945, responsible for operating Indonesia's railway system. We offer passenger, freight, and tourism services, focusing on safety, reliability, and sustainability. Our mission is to enhance national connectivity through modernized rail services and innovative solutions.</p>
+        </div>
+    </div>
+
+    <!-- Modal for Privacy Policy -->
+    <div id="modal-footer-privacy" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+<h2>Privacy Policy</h2>
+<p>At PT. Kereta Api Indonesia (Persero), we value your privacy. We collect and process personal data solely for the purpose of providing our services. Your information is kept secure and will not be shared with third parties without your consent, except as required by law. By using our services, you consent to the collection and use of your personal data in accordance with this policy.</p>
+        </div>
+    </div>
+
+    <!-- Modal for Terms & Conditions -->
+    <div id="modal-footer-terms" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+<h2>Terms and Conditions</h2>
+<p>By using the services provided by PT. Kereta Api Indonesia (Persero), you agree to the following terms:</p>
+<ul>
+    <li><strong>Service Use:</strong> You agree to use our services for lawful purposes only.</li>
+    <li><strong>Ticketing:</strong> Tickets are non-refundable unless stated otherwise. Prices may change without prior notice.</li>
+    <li><strong>Data Privacy:</strong> Your personal data will be collected and used in accordance with our Privacy Policy.</li>
+    <li><strong>Liability:</strong> We are not responsible for delays, cancellations, or damages outside our control.</li>
+    <li><strong>Changes:</strong> We reserve the right to modify these terms at any time.</li>
+</ul>
+<p>By continuing to use our services, you accept and agree to these terms.</p>
+        </div>
+    </div>
+
+
+
+    <!-- Modal Apply -->
+    <div id="modal-apply" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+<h2>Lowongan Kerja KAI 2025 | Rekrutmen KAI Terbaru untuk Lulusan SMA/SMK & Fresh Graduate</h2>
+<br />
+<h3>Tentang Rekrutmen Kereta Api Indonesia (KAI)</h3>
+<p>Kereta Api Indonesia (KAI) membuka kesempatan bagi para lulusan <strong>SMA/SMK</strong> serta <strong>Fresh Graduate</strong> untuk bergabung dengan perusahaan transportasi terbesar di Indonesia. Tahun 2025 ini, KAI mencari individu yang penuh semangat dan siap untuk berkembang di berbagai posisi operasional di seluruh Indonesia. Ini adalah kesempatan yang sangat baik untuk mengembangkan karir di industri transportasi yang terus berkembang.</p>
+<br />
+<h3>Posisi yang Dibutuhkan</h3>
+<p>KAI membutuhkan tenaga kerja untuk berbagai posisi operasional, termasuk:</p>
+<ul>
+  <li><strong>Kondektur</strong></li>
+  <li><strong>Petugas Stasiun</strong></li>
+  <li><strong>Posisi operasional lainnya yang mendukung jalannya kereta api</strong></li>
+</ul>
+<p>Pelamar yang terpilih akan bertanggung jawab dalam memastikan kelancaran operasional kereta api di berbagai lokasi di seluruh Indonesia.</p>
+<br />
+<h3>Kualifikasi yang Dibutuhkan</h3>
+<p>Pelamar diharapkan memenuhi kualifikasi berikut:</p>
+<ul>
+  <li><strong>Pendidikan:</strong> Minimal lulusan <strong>SMA/SMK</strong>. Fresh Graduate dipersilakan melamar.</li>
+  <li><strong>Kemampuan:</strong>
+    <ul>
+      <li>Kemampuan komunikasi yang baik.</li>
+      <li>Kemampuan bekerja dalam tim.</li>
+      <li>Kemampuan bekerja di bawah tekanan.</li>
+      <li>Fleksibilitas dan adaptabilitas yang tinggi terhadap perubahan lingkungan kerja.</li>
+    </ul>
+  </li>
+  <li><strong>Pengalaman Kerja:</strong> Tidak diperlukan pengalaman kerja sebelumnya. Fresh Graduate diterima untuk posisi ini.</li>
+</ul>
+<br />
+<h3>Gaji dan Tunjangan</h3>
+<p><strong>Gaji Pokok</strong> yang ditawarkan adalah <strong>IDR 157.480 per hari</strong> (base salary), yang setara dengan penghasilan yang dapat disesuaikan dengan jumlah hari kerja dalam sebulan.</p>
+<p>Selain itu, KAI juga menyediakan berbagai <strong>tunjangan</strong> dan <strong>manfaat</strong> sebagai bagian dari paket kompensasi, di antaranya:</p>
+<ul>
+  <li>Asuransi Kesehatan</li>
+  <li>Tunjangan Hari Raya (THR)</li>
+  <li>Kesempatan untuk berkembang di industri transportasi yang besar dan berkembang</li>
+</ul>
+<br />
+<h3>Lokasi Pekerjaan</h3>
+<p>Posisi ini tersedia di <strong>seluruh Indonesia</strong>, yang memungkinkan Anda untuk bekerja di berbagai kota dan lokasi strategis di tanah air.</p>
+<ul>
+  <li><strong>Alamat:</strong> Seluruh Indonesia</li>
+  <li><strong>Kode Pos:</strong> 12345 (sebagai contoh)</li>
+  <li><strong>Wilayah:</strong> Indonesia</li>
+</ul>
+<br />
+<h3>Cara Melamar</h3>
+<p>Untuk melamar, kunjungi halaman resmi <strong>Rekrutmen KAI 2025</strong> di situs web <strong>Kereta Api Indonesia</strong> dan isi formulir aplikasi online. Berikut adalah detail kontak yang dapat dihubungi untuk pertanyaan lebih lanjut:</p>
+<ul>
+  <li><strong>Telepon:</strong> +6222-4230031</li>
+  <li><strong>Email:</strong> <a href="mailto:rekrutmen@kai.id">rekrutmen@kai.id</a></li>
+  <li><strong>Website:</strong> <a href="https://www.kai.id/karir" target="_blank">www.kai.id/karir</a></li>
+</ul>
+<br />
+<h3>Jam Kerja</h3>
+<p>Jam kerja yang diharapkan adalah <strong>40 jam per minggu</strong>, dengan kemungkinan untuk bekerja di luar jam normal dalam situasi tertentu, terutama saat dibutuhkan di lapangan.</p>
+<br />
+<h3>Informasi Tambahan</h3>
+<ul>
+  <li><strong>Jenis Pekerjaan:</strong> Pekerjaan <strong>Full-Time</strong>, <strong>Contractor</strong>, <strong>Internship</strong>, <strong>Part-Time</strong>, dan <strong>Freelance</strong> tersedia.</li>
+  <li><strong>Batas Waktu Pendaftaran:</strong> <strong>31 Maret 2025</strong></li>
+</ul>
+<br />
+<h3>Kesimpulan</h3>
+<p>Dengan kesempatan karir yang terbuka luas di Kereta Api Indonesia, Anda memiliki peluang untuk berkembang di industri transportasi yang stabil dan terus berkembang. Jangan lewatkan kesempatan untuk menjadi bagian dari tim KAI yang dinamis dan berperan dalam menjaga kelancaran transportasi publik di Indonesia.</p>
+<p>Segera daftarkan diri Anda dan raih kesempatan karir bersama <strong>Kereta Api Indonesia (KAI)</strong>!</p>
+        </div>
+    </div>
+
+
+
+    <script>
+        // Modal functionality for Header
+        function showModal(modalId) {
+            const modal = document.getElementById(modalId);
+            const closeModal = modal.querySelector('.close');
+            modal.style.display = 'block';
+
+            closeModal.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            window.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            };
+        }
+
+        // Apply Modals
+       document.getElementById('applyBtn').addEventListener('click', () => showModal('modal-apply'));
+
+        // Header Modals
+        document.getElementById('aboutBtn').addEventListener('click', () => showModal('modal-about'));
+        document.getElementById('servicesBtn').addEventListener('click', () => showModal('modal-services'));
+        document.getElementById('contactBtn').addEventListener('click', () => showModal('modal-contact'));
+
+        // Footer Modals
+        document.getElementById('aboutFooterBtn').addEventListener('click', () => showModal('modal-footer-about'));
+        document.getElementById('privacyFooterBtn').addEventListener('click', () => showModal('modal-footer-privacy'));
+        document.getElementById('termsFooterBtn').addEventListener('click', () => showModal('modal-footer-terms'));
+    </script>
+
+//schema JSON-LD
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Info Lowongan Kerja KAI Terbaru | Rekrutmen KAI 2025 Lulusan SMA/SMK & Fresh Graduate",
+  "description": "Rekrutmen Kereta Api Indonesia (KAI) 2025 membuka lowongan kerja untuk lulusan SMA/SMK dan Fresh Graduate. Pelamar diharapkan untuk memenuhi kualifikasi yang ditentukan dan mengikuti proses seleksi untuk berkesempatan bergabung dengan KAI.",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "Kereta Api Indonesia",
+    "value": "KAI-2025-001"
+  },
+  "datePosted": "2025-01-01",
+  "validThrough": "2025-03-31T23:59:59Z",
+  "employmentType": "FULL_TIME, CONTRACTOR, INTERNSHIP, PART_TIME, FREELANCE",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Kereta Api Indonesia (KAI)",
+    "sameAs": "https://www.kai.id",
+    "logo": "https://logo.clearbit.com/kai.id"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "name": "Seluruh Indonesia",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Indonesia",
+      "postalCode": "12345",
+      "addressRegion": "Indonesia",
+      "streetAddress": "Indonesia",
+      "addressCountry": "ID"
+    }
+  },
+  "jobBenefits": "Asuransi kesehatan, tunjangan hari raya, kesempatan untuk berkembang di industri transportasi",
+  "qualifications": {
+    "@type": "OccupationalCredential",
+    "credentialCategory": "SMA/SMK",
+    "educationalCredentialAwarded": "SMA/SMK atau Fresh Graduate"
+  },
+  "responsibilities": "Bertanggung jawab dalam berbagai posisi operasional di KAI, seperti kondektur, petugas stasiun, dan posisi lainnya yang mendukung operasional kereta api.",
+  "skills": [
+    "Kemampuan komunikasi yang baik",
+    "Kemampuan bekerja dalam tim",
+    "Kemampuan bekerja di bawah tekanan",
+    "Fleksibilitas dan adaptabilitas"
+  ],
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "IDR",
+    "value": {
+      "@type": "QuantitativeValue",
+      "value": 157480.00,
+      "unitText": "DAY"
+    }
+  },
+  "url": "https://www.kai.id/karir",
+  "applicationContact": {
+    "@type": "ContactPoint",
+    "contactType": "Recruitment",
+    "telephone": "+6222-4230031",
+    "email": "rekrutmen@kai.id",
+    "areaServed": "ID",
+    "availableLanguage": "ID"
+  },
+  "experienceRequirements": "Tidak diperlukan pengalaman kerja sebelumnya. Fresh Graduate diterima.",
+  "educationRequirements": "Minimal lulusan SMA/SMK dari jurusan yang relevan.",
+  "workHours": "40 jam per minggu",
+  "jobFunction": "Operasional Transportasi"
+}
+</script>
+</body>
+</html>
