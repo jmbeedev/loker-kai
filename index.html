@@ -328,6 +328,125 @@ footer ul li a:hover {
     }
 }
 
+
+/* Job Listings Section (Grid 3 Kolom Horizontal) */
+.job-listings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Membuat 3 kolom dalam satu baris */
+    gap: 20px; /* Memberikan jarak antar elemen */
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+.job-item {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Pastikan gambar dalam setiap job item memiliki lebar yang tepat */
+.job-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.job-item h3 {
+    margin: 15px 0;
+    font-size: 1.5rem;
+}
+
+.job-item p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.job-item .apply-btn {
+    background-color: #FF740F;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+}
+
+.job-item .apply-btn:hover {
+    background-color: #D4600D;
+    transform: scale(1.05);
+}
+
+/* Modal for Apply Now */
+#applyModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    width: 70%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.modal-content h2 {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
+}
+
+.modal-content #modalTitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.modal-content #modalDescription {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+/* Close Button */
+.close {
+    color: #FF6200;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .job-listings {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom pada layar lebih kecil */
+    }
+}
+
+@media (max-width: 768px) {
+    .job-listings {
+        grid-template-columns: 1fr; /* 1 kolom pada layar lebih kecil */
+    }
+}
+
     </style>
 </head>
 <body>
@@ -356,7 +475,49 @@ footer ul li a:hover {
         </div>
     </section>
 
-    <!-- Footer -->
+<!-- Job Listings Section (Grid 3 Kolom) -->
+<section class="job-listings">
+    <div class="job-item">
+        <img src="https://images.unsplash.com/photo-1591541286664-e1cc0a4e6eef?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Trafik Operator PT. KAI">
+        <h3>Trafik Operator</h3>
+        <p>Mengatur jadwal dan pergerakan kereta api di stasiun dan lintasan.</p>
+        <a href="#" id="applyBtn1" class="cta-btn">APPLY NOW</a>
+    </div>
+    <div class="job-item">
+        <img src="https://images.unsplash.com/photo-1540476547779-348beb642680?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Teknisi Kereta Api">
+        <h3>Teknisi Kereta Api</h3>
+        <p>Bertanggung jawab untuk pemeliharaan dan perbaikan kereta api dan infrastruktur lainnya.</p>
+        <a href="#" id="applyBtn2" class="cta-btn">APPLY NOW</a>
+    </div>
+    <div class="job-item">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Staf Administrasi PT. KAI">
+        <h3>Staf Administrasi</h3>
+        <p>Mengelola data, dokumen, dan administrasi internal perusahaan.</p>
+        <a href="#" id="applyBtn3" class="cta-btn">APPLY NOW</a>
+    </div>
+    <div class="job-item">
+        <img src="https://images.unsplash.com/photo-1626863905121-3b0c0ed7b94c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Customer Service PT. KAI">
+        <h3>Customer Service</h3>
+        <p>Memberikan layanan kepada penumpang, menjawab pertanyaan, dan menangani keluhan.</p>
+        <a href="#" id="applyBtn4" class="cta-btn">APPLY NOW</a>
+    </div>
+    <div class="job-item">
+        <img src="https://images.unsplash.com/photo-1622098152051-fcb9904099a7?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ticketing PT. KAI">
+        <h3>Ticketing</h3>
+        <p>Bertanggung jawab dalam penjualan tiket, baik melalui loket maupun secara online.</p>
+        <a href="#" id="applyBtn5" class="cta-btn">APPLY NOW</a>
+    </div>
+    <div class="job-item">
+        <img src="https://images.unsplash.com/photo-1581258858444-c7db0772aec4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pramugari/Pramugara PT. KAI">
+        <h3>Pramugari/Pramugara</h3>
+        <p>Menginformasikan mengenai jadwal perjalanan, prosedur keselamatan, dan kondisi kereta.</p>
+        <a href="#" id="applyBtn6" class="cta-btn">APPLY NOW</a>
+    </div>
+    <!-- Add more job items as needed -->
+</section>
+
+
+<!-- Footer -->
     <footer>
         <ul>
             <li><a href="#" id="aboutFooterBtn">About Us</a></li>
@@ -364,9 +525,9 @@ footer ul li a:hover {
             <li><a href="#" id="termsFooterBtn">Terms & Conditions</a></li>
         </ul>
         <p>&copy; 2025 PT. KAI INDONESIA</p>
-    </footer>
+</footer>
 
-    <!-- Modal for About Us -->
+<!-- Modal for About Us -->
     <div id="modal-about" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -375,7 +536,7 @@ footer ul li a:hover {
         </div>
     </div>
 
-    <!-- Modal for Services -->
+<!-- Modal for Services -->
     <div id="modal-services" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -390,7 +551,7 @@ footer ul li a:hover {
         </div>
     </div>
 
-    <!-- Modal for Contact -->
+<!-- Modal for Contact -->
     <div id="modal-contact" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -415,16 +576,16 @@ Jl. Perkeretaapian No. 1, Jakarta, Indonesia</p>
         </div>
     </div>
 
-    <!-- Modal for Footer About Us -->
+<!-- Modal for Footer About Us -->
     <div id="modal-footer-about" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
 <h2>About Us</h2>
 <p>PT. Kereta Api Indonesia (Persero) is a state-owned enterprise established in 1945, responsible for operating Indonesia's railway system. We offer passenger, freight, and tourism services, focusing on safety, reliability, and sustainability. Our mission is to enhance national connectivity through modernized rail services and innovative solutions.</p>
-        </div>
     </div>
+</div>
 
-    <!-- Modal for Privacy Policy -->
+<!-- Modal for Privacy Policy -->
     <div id="modal-footer-privacy" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -433,7 +594,7 @@ Jl. Perkeretaapian No. 1, Jakarta, Indonesia</p>
         </div>
     </div>
 
-    <!-- Modal for Terms & Conditions -->
+<!-- Modal for Terms & Conditions -->
     <div id="modal-footer-terms" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -447,12 +608,10 @@ Jl. Perkeretaapian No. 1, Jakarta, Indonesia</p>
     <li><strong>Changes:</strong> We reserve the right to modify these terms at any time.</li>
 </ul>
 <p>By continuing to use our services, you accept and agree to these terms.</p>
-        </div>
     </div>
+</div>
 
-
-
-    <!-- Modal Apply -->
+<!-- Modal Apply -->
     <div id="modal-apply" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -522,12 +681,150 @@ Jl. Perkeretaapian No. 1, Jakarta, Indonesia</p>
 <h3>Kesimpulan</h3>
 <p>Dengan kesempatan karir yang terbuka luas di Kereta Api Indonesia, Anda memiliki peluang untuk berkembang di industri transportasi yang stabil dan terus berkembang. Jangan lewatkan kesempatan untuk menjadi bagian dari tim KAI yang dinamis dan berperan dalam menjaga kelancaran transportasi publik di Indonesia.</p>
 <p>Segera daftarkan diri Anda dan raih kesempatan karir bersama <strong>Kereta Api Indonesia (KAI)</strong>!</p>
-        </div>
     </div>
+</div>
+
+<!-- Modal Apply Traffic Operator -->
+    <div id="modal-apply1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+<h2>Operator Traffic PT. KAI</h2>
+<br />
+<h3>Tentang Rekrutmen Kereta Api Indonesia (KAI)</h3>
+<p>Kereta Api Indonesia (KAI) membuka kesempatan bagi para lulusan <strong>SMA/SMK</strong> serta <strong>Fresh Graduate</strong> untuk bergabung dengan perusahaan transportasi terbesar di Indonesia. Tahun 2025 ini, KAI mencari individu yang penuh semangat dan siap untuk berkembang di berbagai posisi operasional di seluruh Indonesia. Ini adalah kesempatan yang sangat baik untuk mengembangkan karir di industri transportasi yang terus berkembang.</p>
+  </div>
+</div>
+
+<!-- Modal Apply Traffic Operator -->
+    <div id="modal-apply2" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+<h2>Teknisi Kereta Api PT. KAI</h2>
+<br />
+<h3>Tentang Rekrutmen Kereta Api Indonesia (KAI)</h3>
+<p>Kereta Api Indonesia (KAI) membuka kesempatan bagi para lulusan <strong>SMA/SMK</strong> serta <strong>Fresh Graduate</strong> untuk bergabung dengan perusahaan transportasi terbesar di Indonesia. Tahun 2025 ini, KAI mencari individu yang penuh semangat dan siap untuk berkembang di berbagai posisi operasional di seluruh Indonesia. Ini adalah kesempatan yang sangat baik untuk mengembangkan karir di industri transportasi yang terus berkembang.</p>
+  </div>
+</div>
+
+<!-- Modal Apply Traffic Operator -->
+    <div id="modal-apply3" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+<h2>Staf Administrasi PT. KAI</h2>
+<br />
+<h3>Tentang Rekrutmen Kereta Api Indonesia (KAI)</h3>
+<p>Kereta Api Indonesia (KAI) membuka kesempatan bagi para lulusan <strong>SMA/SMK</strong> serta <strong>Fresh Graduate</strong> untuk bergabung dengan perusahaan transportasi terbesar di Indonesia. Tahun 2025 ini, KAI mencari individu yang penuh semangat dan siap untuk berkembang di berbagai posisi operasional di seluruh Indonesia. Ini adalah kesempatan yang sangat baik untuk mengembangkan karir di industri transportasi yang terus berkembang.</p>
+  </div>
+</div>
+
+<!-- Modal Apply Customer Service -->
+    <div id="modal-apply4" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+<h2>Customer Service PT. KAI</h2>
+<br>
+<h3>Deskripsi Pekerjaan:</h3>
+<ul>
+    <li>Memberikan pelayanan informasi terkait <strong>jadwal keberangkatan</strong>, rute, harga tiket, dan fasilitas kereta api kepada penumpang.</li>
+    <li>Menangani <strong>pertanyaan</strong>, keluhan, dan masalah yang diajukan oleh penumpang dengan cepat dan profesional.</li>
+    <li>Mengelola dan memproses pembelian tiket secara langsung di <i>loket</i> maupun secara online.</li>
+    <li>Menerima dan mengatasi keluhan serta memberi solusi yang tepat kepada penumpang mengenai berbagai masalah yang timbul.</li>
+    <li>Menginformasikan penumpang mengenai <strong>perubahan jadwal</strong>, kerusakan atau gangguan pada fasilitas kereta api.</li>
+    <li>Menjaga citra positif perusahaan dengan memberikan pelayanan yang ramah, responsif, dan efektif.</li>
+    <li>Melakukan koordinasi dengan departemen terkait dalam penyelesaian masalah yang lebih kompleks.</li>
+    <li>Memastikan kenyamanan penumpang dan kelancaran proses perjalanan.</li>
+</ul>
+<br>
+<h3>Kualifikasi:</h3>
+<ul>
+    <li>Pendidikan minimal <strong>SMA/SMK</strong>, lebih disukai D3 atau S1 dari berbagai jurusan.</li>
+    <li>Memiliki pengalaman di bidang layanan pelanggan (<i>customer service</i>) lebih disukai.</li>
+    <li>Kemampuan komunikasi yang baik, baik <strong>lisan</strong> maupun tulisan.</li>
+    <li>Mampu bekerja dengan baik dalam tim maupun secara individu.</li>
+    <li>Mampu menggunakan komputer dan aplikasi dasar seperti <i>Microsoft Office</i>, serta memahami sistem pemesanan tiket.</li>
+    <li>Bersedia bekerja dalam shift dan di lingkungan yang dinamis (di stasiun atau kereta).</li>
+    <li>Memiliki sikap ramah, sabar, dan mampu menangani situasi yang membutuhkan solusi cepat.</li>
+    <li>Mampu bekerja di bawah tekanan dan memiliki keterampilan dalam menyelesaikan masalah.</li>
+    <li>Diutamakan yang memiliki <strong>penampilan menarik</strong> dan mampu berkomunikasi dengan bahasa asing (jika diperlukan).</li>
+    <li>Memiliki integritas dan etika kerja yang tinggi.</li>
+</ul>
+
+<br>
+
+  </div>
+</div>
+
+<!-- Modal Apply Ticketing -->
+    <div id="modal-apply5" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+<h2>Ticketing PT. KAI</h2>
+<br>
+<h3>Deskripsi Pekerjaan:</h3>
+<ul>
+    <li>Melakukan penjualan tiket baik secara langsung di loket maupun melalui sistem online.</li>
+    <li>Mengelola transaksi tiket, baik untuk keberangkatan kereta api reguler maupun khusus.</li>
+    <li>Memberikan informasi terkait jadwal keberangkatan, rute, dan harga tiket kepada penumpang.</li>
+    <li>Menangani permintaan khusus seperti pemesanan tiket grup atau tiket untuk perjalanan jarak jauh.</li>
+    <li>Menjaga keamanan dan kerahasiaan data transaksi tiket.</li>
+    <li>Menangani perubahan jadwal, pembatalan tiket, dan pengembalian dana sesuai dengan prosedur yang berlaku.</li>
+    <li>Memberikan pelayanan pelanggan yang ramah, cepat, dan tepat sesuai dengan kebutuhan penumpang.</li>
+    <li>Mengkoordinasikan proses pemesanan tiket dengan departemen terkait untuk memastikan kelancaran operasional.</li>
+</ul>
+<br>
+<h3>Kualifikasi:</h3>
+<ul>
+    <li>Pendidikan minimal <strong>SMA/SMK</strong>, lebih disukai D3 atau S1 di bidang <i>perhotelan</i>, manajemen, atau administrasi.</li>
+    <li>Memiliki pengalaman di bidang pelayanan pelanggan atau penjualan tiket lebih disukai.</li>
+    <li>Kemampuan komunikasi yang baik, baik <strong>lisan</strong> maupun tulisan.</li>
+    <li>Memiliki kemampuan komputer dasar, terutama dalam menggunakan sistem pemesanan tiket.</li>
+    <li>Teliti, terorganisir, dan mampu bekerja di bawah tekanan.</li>
+    <li>Memiliki kemampuan untuk menangani keluhan pelanggan dan mencari solusi yang efektif.</li>
+    <li>Bersedia bekerja dengan sistem shift dan di lingkungan yang dinamis.</li>
+    <li>Diutamakan memiliki penampilan menarik dan ramah dalam berinteraksi dengan penumpang.</li>
+</ul>
+
+<br>
+  </div>
+</div>
+
+<!-- Modal Apply Pramugari/Pramugara -->
+    <div id="modal-apply6" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+<h2>Pramugari/Pramugara PT. KAI Indonesia</h2>
+<br>
+<h3>Deskripsi Pekerjaan:</h3>
+<ul>
+    <li>Memberikan pelayanan kepada penumpang kereta api dengan ramah dan profesional.</li>
+    <li>Menjaga keselamatan dan kenyamanan penumpang selama perjalanan kereta api.</li>
+    <li>Memberikan informasi terkait jadwal, rute, dan fasilitas yang tersedia di kereta.</li>
+    <li>Membantu penumpang dengan kebutuhan khusus, seperti lansia, anak-anak, atau penumpang dengan disabilitas.</li>
+    <li>Melakukan pemeriksaan keselamatan, termasuk penggunaan alat pemadam kebakaran dan prosedur evakuasi darurat.</li>
+    <li>Melakukan layanan makanan dan minuman kepada penumpang di kelas tertentu.</li>
+    <li>Menyelesaikan keluhan penumpang dengan cara yang cepat dan efektif.</li>
+    <li>Menjaga kebersihan kabin kereta selama perjalanan dan setelah perjalanan selesai.</li>
+</ul>
+<br>
+<h3>Kualifikasi:</h3>
+<ul>
+    <li>Pendidikan minimal <strong>SMA/SMK</strong>, lebih disukai D3 atau S1 di bidang <i>pariwisata</i>, perhotelan, atau komunikasi.</li>
+    <li>Memiliki penampilan menarik, rapi, dan sesuai dengan standar yang ditetapkan oleh PT. KAI.</li>
+    <li>Memiliki kemampuan komunikasi yang baik, baik <strong>lisan</strong> maupun tulisan.</li>
+    <li>Bersedia bekerja dengan sistem shift dan di lingkungan yang dinamis (di kereta atau stasiun).</li>
+    <li>Mampu menangani situasi darurat dan memberikan pertolongan pertama jika diperlukan.</li>
+    <li>Diutamakan memiliki pengalaman di bidang pelayanan pelanggan atau sebagai pramugari/pramugara.</li>
+    <li>Memiliki sikap ramah, sabar, dan dapat bekerja dengan tim.</li>
+    <li>Memiliki kemampuan untuk berbicara dalam bahasa asing (jika diperlukan) merupakan nilai tambah.</li>
+</ul>
+
+<br>
+  </div>
+</div>
 
 
 
-    <script>
+<script>
         // Modal functionality for Header
         function showModal(modalId) {
             const modal = document.getElementById(modalId);
@@ -547,6 +844,15 @@ Jl. Perkeretaapian No. 1, Jakarta, Indonesia</p>
 
         // Apply Modals
        document.getElementById('applyBtn').addEventListener('click', () => showModal('modal-apply'));
+
+
+       // Apply Modals
+       document.getElementById('applyBtn1').addEventListener('click', () => showModal('modal-apply1'));
+       document.getElementById('applyBtn2').addEventListener('click', () => showModal('modal-apply2'));
+       document.getElementById('applyBtn3').addEventListener('click', () => showModal('modal-apply3'));
+       document.getElementById('applyBtn4').addEventListener('click', () => showModal('modal-apply4'));
+       document.getElementById('applyBtn5').addEventListener('click', () => showModal('modal-apply5'));
+       document.getElementById('applyBtn6').addEventListener('click', () => showModal('modal-apply6'));
 
         // Header Modals
         document.getElementById('aboutBtn').addEventListener('click', () => showModal('modal-about'));
@@ -571,7 +877,7 @@ Jl. Perkeretaapian No. 1, Jakarta, Indonesia</p>
     "name": "Kereta Api Indonesia",
     "value": "KAI-2025-001"
   },
-  "datePosted": "2025-01-01",
+  "datePosted": "2025-02-09",
   "validThrough": "2025-03-31T23:59:59Z",
   "employmentType": "FULL_TIME, CONTRACTOR, INTERNSHIP, PART_TIME, FREELANCE",
   "hiringOrganization": {
@@ -629,5 +935,434 @@ Jl. Perkeretaapian No. 1, Jakarta, Indonesia</p>
   "jobFunction": "Operasional Transportasi"
 }
 </script>
+
+
+<!-- Schema JSON-LD Trafik Operator PT. KAI-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Trafik Operator PT. KAI | Rekrutmen KAI 2025 Lulusan SMA/SMK & Fresh Graduate",
+  "description": "Rekrutmen Kereta Api Indonesia (KAI) 2025 membuka lowongan untuk posisi Trafik Operator. Pelamar diharapkan memenuhi kualifikasi yang ditentukan dan mengikuti proses seleksi untuk berkesempatan bergabung dengan PT. KAI.",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "Kereta Api Indonesia",
+    "value": "KAI-2025-002"
+  },
+  "datePosted": "2025-02-09",
+  "validThrough": "2025-03-31T23:59:59Z",
+  "employmentType": "FULL_TIME, CONTRACTOR, PART_TIME",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Kereta Api Indonesia (KAI)",
+    "sameAs": "https://www.kai.id",
+    "logo": "https://logo.clearbit.com/kai.id"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "name": "Seluruh Indonesia",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Indonesia",
+      "postalCode": "12345",
+      "addressRegion": "Indonesia",
+      "streetAddress": "Indonesia",
+      "addressCountry": "ID"
+    }
+  },
+  "jobBenefits": "Asuransi kesehatan, tunjangan hari raya, kesempatan untuk berkembang di industri transportasi",
+  "qualifications": {
+    "@type": "OccupationalCredential",
+    "credentialCategory": "SMA/SMK",
+    "educationalCredentialAwarded": "SMA/SMK atau Fresh Graduate"
+  },
+  "responsibilities": "Bertanggung jawab untuk mengatur jadwal keberangkatan kereta, memantau pergerakan kereta, dan memastikan kelancaran operasi kereta api di stasiun.",
+  "skills": [
+    "Kemampuan komunikasi yang baik",
+    "Kemampuan bekerja dalam tim",
+    "Kemampuan mengoperasikan sistem jadwal kereta",
+    "Kemampuan bekerja di bawah tekanan"
+  ],
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "IDR",
+    "value": {
+      "@type": "QuantitativeValue",
+      "value": 157480.00,
+      "unitText": "DAY"
+    }
+  },
+  "url": "https://www.kai.id/karir",
+  "applicationContact": {
+    "@type": "ContactPoint",
+    "contactType": "Recruitment",
+    "telephone": "+6222-4230031",
+    "email": "rekrutmen@kai.id",
+    "areaServed": "ID",
+    "availableLanguage": "ID"
+  },
+  "experienceRequirements": "Tidak diperlukan pengalaman kerja sebelumnya. Fresh Graduate diterima.",
+  "educationRequirements": "Minimal lulusan SMA/SMK dari jurusan yang relevan.",
+  "workHours": "40 jam per minggu",
+  "jobFunction": "Operasional Transportasi"
+}
+</script>
+
+<!-- Schema JSON-LD Teknisi Kereta Api PT. KAI-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Teknisi Kereta Api PT. KAI | Rekrutmen KAI 2025 Lulusan SMA/SMK & Fresh Graduate",
+  "description": "Rekrutmen Kereta Api Indonesia (KAI) 2025 membuka lowongan untuk posisi Teknisi Kereta Api. Pelamar diharapkan memenuhi kualifikasi yang ditentukan dan mengikuti proses seleksi untuk bergabung dengan PT. KAI.",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "Kereta Api Indonesia",
+    "value": "KAI-2025-003"
+  },
+  "datePosted": "2025-02-09",
+  "validThrough": "2025-03-31T23:59:59Z",
+  "employmentType": "FULL_TIME, CONTRACTOR, PART_TIME",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Kereta Api Indonesia (KAI)",
+    "sameAs": "https://www.kai.id",
+    "logo": "https://logo.clearbit.com/kai.id"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "name": "Seluruh Indonesia",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Indonesia",
+      "postalCode": "12345",
+      "addressRegion": "Indonesia",
+      "streetAddress": "Indonesia",
+      "addressCountry": "ID"
+    }
+  },
+  "jobBenefits": "Asuransi kesehatan, tunjangan hari raya, kesempatan untuk berkembang di industri transportasi",
+  "qualifications": {
+    "@type": "OccupationalCredential",
+    "credentialCategory": "SMA/SMK",
+    "educationalCredentialAwarded": "SMA/SMK atau Fresh Graduate"
+  },
+  "responsibilities": "Bertanggung jawab untuk memelihara dan memperbaiki kereta api dan sistem yang mendukung operasional kereta, memastikan semua sistem bekerja dengan baik dan aman.",
+  "skills": [
+    "Kemampuan teknis dalam perawatan kereta api",
+    "Kemampuan bekerja dengan peralatan mekanik dan elektronik",
+    "Kemampuan analisis dalam menangani kerusakan teknis",
+    "Kemampuan bekerja dalam tim"
+  ],
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "IDR",
+    "value": {
+      "@type": "QuantitativeValue",
+      "value": 157489.00,
+      "unitText": "DAY"
+    }
+  },
+  "url": "https://www.kai.id/karir",
+  "applicationContact": {
+    "@type": "ContactPoint",
+    "contactType": "Recruitment",
+    "telephone": "+6222-4230031",
+    "email": "rekrutmen@kai.id",
+    "areaServed": "ID",
+    "availableLanguage": "ID"
+  },
+  "experienceRequirements": "Tidak diperlukan pengalaman kerja sebelumnya. Fresh Graduate diterima.",
+  "educationRequirements": "Minimal lulusan SMA/SMK dari jurusan teknik atau yang relevan.",
+  "workHours": "40 jam per minggu",
+  "jobFunction": "Pemeliharaan dan Perbaikan Kereta Api"
+}
+</script>
+
+
+<!-- Schema JSON-LD Staf Administrasi PT. KAI-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Staf Administrasi PT. KAI | Rekrutmen KAI 2025 Lulusan SMA/SMK & Fresh Graduate",
+  "description": "Rekrutmen Kereta Api Indonesia (KAI) 2025 membuka lowongan untuk posisi Staf Administrasi. Pelamar diharapkan memenuhi kualifikasi yang ditentukan dan mengikuti proses seleksi untuk bergabung dengan PT. KAI.",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "Kereta Api Indonesia",
+    "value": "KAI-2025-004"
+  },
+  "datePosted": "2025-02-09",
+  "validThrough": "2025-03-31T23:59:59Z",
+  "employmentType": "FULL_TIME, PART_TIME",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Kereta Api Indonesia (KAI)",
+    "sameAs": "https://www.kai.id",
+    "logo": "https://logo.clearbit.com/kai.id"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "name": "Seluruh Indonesia",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Indonesia",
+      "postalCode": "12345",
+      "addressRegion": "Indonesia",
+      "streetAddress": "Indonesia",
+      "addressCountry": "ID"
+    }
+  },
+  "jobBenefits": "Asuransi kesehatan, tunjangan hari raya, kesempatan untuk berkembang di industri transportasi",
+  "qualifications": {
+    "@type": "OccupationalCredential",
+    "credentialCategory": "SMA/SMK",
+    "educationalCredentialAwarded": "SMA/SMK atau Fresh Graduate"
+  },
+  "responsibilities": "Bertanggung jawab dalam menangani administrasi perkantoran, pengelolaan data, pengarsipan dokumen, serta mendukung kelancaran operasional administrasi di PT. KAI.",
+  "skills": [
+    "Kemampuan dalam penggunaan aplikasi perkantoran seperti Microsoft Office",
+    "Kemampuan mengelola dokumen dan data secara sistematis",
+    "Kemampuan komunikasi yang baik",
+    "Kemampuan bekerja dalam tim"
+  ],
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "IDR",
+    "value": {
+      "@type": "QuantitativeValue",
+      "value": 157480.00,
+      "unitText": "DAY"
+    }
+  },
+  "url": "https://www.kai.id/karir",
+  "applicationContact": {
+    "@type": "ContactPoint",
+    "contactType": "Recruitment",
+    "telephone": "+6222-4230031",
+    "email": "rekrutmen@kai.id",
+    "areaServed": "ID",
+    "availableLanguage": "ID"
+  },
+  "experienceRequirements": "Tidak diperlukan pengalaman kerja sebelumnya. Fresh Graduate diterima.",
+  "educationRequirements": "Minimal lulusan SMA/SMK dari jurusan yang relevan.",
+  "workHours": "40 jam per minggu",
+  "jobFunction": "Administrasi Perkantoran"
+}
+</script>
+
+<!-- Schema JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Customer Service PT. KAI | Rekrutmen KAI 2025 Lulusan SMA/SMK & Fresh Graduate",
+  "description": "Rekrutmen Kereta Api Indonesia (KAI) 2025 membuka lowongan untuk posisi Customer Service. Pelamar diharapkan memenuhi kualifikasi yang ditentukan dan mengikuti proses seleksi untuk bergabung dengan PT. KAI.",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "Kereta Api Indonesia",
+    "value": "KAI-2025-005"
+  },
+  "datePosted": "2025-02-09",
+  "validThrough": "2025-03-31T23:59:59Z",
+  "employmentType": "FULL_TIME, PART_TIME",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Kereta Api Indonesia (KAI)",
+    "sameAs": "https://www.kai.id",
+    "logo": "https://logo.clearbit.com/kai.id"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "name": "Seluruh Indonesia",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Indonesia",
+      "postalCode": "12345",
+      "addressRegion": "Indonesia",
+      "streetAddress": "Indonesia",
+      "addressCountry": "ID"
+    }
+  },
+  "jobBenefits": "Asuransi kesehatan, tunjangan hari raya, kesempatan untuk berkembang di industri transportasi",
+  "qualifications": {
+    "@type": "OccupationalCredential",
+    "credentialCategory": "SMA/SMK",
+    "educationalCredentialAwarded": "SMA/SMK atau Fresh Graduate"
+  },
+  "responsibilities": "Bertanggung jawab dalam memberikan pelayanan informasi terkait jadwal, harga tiket, dan fasilitas kereta api, serta menangani pertanyaan dan keluhan dari penumpang.",
+  "skills": [
+    "Kemampuan komunikasi yang baik",
+    "Kemampuan menangani keluhan pelanggan",
+    "Kemampuan beradaptasi dalam situasi yang dinamis",
+    "Kemampuan bekerja dalam tim"
+  ],
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "IDR",
+    "value": {
+      "@type": "QuantitativeValue",
+      "value": 157480.00,
+      "unitText": "DAY"
+    }
+  },
+  "url": "https://www.kai.id/karir",
+  "applicationContact": {
+    "@type": "ContactPoint",
+    "contactType": "Recruitment",
+    "telephone": "+6222-4230031",
+    "email": "rekrutmen@kai.id",
+    "areaServed": "ID",
+    "availableLanguage": "ID"
+  },
+  "experienceRequirements": "Tidak diperlukan pengalaman kerja sebelumnya. Fresh Graduate diterima.",
+  "educationRequirements": "Minimal lulusan SMA/SMK dari jurusan yang relevan.",
+  "workHours": "40 jam per minggu",
+  "jobFunction": "Pelayanan Pelanggan"
+}
+</script>
+
+<!-- Schema JSON-LD Ticketing PT. KAI-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Ticketing PT. KAI | Rekrutmen KAI 2025 Lulusan SMA/SMK & Fresh Graduate",
+  "description": "Rekrutmen Kereta Api Indonesia (KAI) 2025 membuka lowongan untuk posisi Ticketing. Pelamar diharapkan memenuhi kualifikasi yang ditentukan dan mengikuti proses seleksi untuk bergabung dengan PT. KAI.",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "Kereta Api Indonesia",
+    "value": "KAI-2025-006"
+  },
+  "datePosted": "2025-02-09",
+  "validThrough": "2025-03-31T23:59:59Z",
+  "employmentType": "FULL_TIME, PART_TIME",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Kereta Api Indonesia (KAI)",
+    "sameAs": "https://www.kai.id",
+    "logo": "https://logo.clearbit.com/kai.id"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "name": "Seluruh Indonesia",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Indonesia",
+      "postalCode": "12345",
+      "addressRegion": "Indonesia",
+      "streetAddress": "Indonesia",
+      "addressCountry": "ID"
+    }
+  },
+  "jobBenefits": "Asuransi kesehatan, tunjangan hari raya, kesempatan untuk berkembang di industri transportasi",
+  "qualifications": {
+    "@type": "OccupationalCredential",
+    "credentialCategory": "SMA/SMK",
+    "educationalCredentialAwarded": "SMA/SMK atau Fresh Graduate"
+  },
+  "responsibilities": "Bertanggung jawab untuk menjual tiket kereta api, memberikan informasi terkait jadwal keberangkatan, rute, harga tiket, dan fasilitas kereta api, serta menangani pemesanan tiket secara langsung maupun online.",
+  "skills": [
+    "Kemampuan dalam pengoperasian sistem pemesanan tiket",
+    "Kemampuan komunikasi yang baik",
+    "Kemampuan bekerja dalam tim",
+    "Kemampuan melayani pelanggan dengan ramah dan cepat"
+  ],
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "IDR",
+    "value": {
+      "@type": "QuantitativeValue",
+      "value": 157480.00,
+      "unitText": "DAY"
+    }
+  },
+  "url": "https://www.kai.id/karir",
+  "applicationContact": {
+    "@type": "ContactPoint",
+    "contactType": "Recruitment",
+    "telephone": "+6222-4230031",
+    "email": "rekrutmen@kai.id",
+    "areaServed": "ID",
+    "availableLanguage": "ID"
+  },
+  "experienceRequirements": "Tidak diperlukan pengalaman kerja sebelumnya. Fresh Graduate diterima.",
+  "educationRequirements": "Minimal lulusan SMA/SMK dari jurusan yang relevan.",
+  "workHours": "40 jam per minggu",
+  "jobFunction": "Pelayanan Pelanggan dan Penjualan Tiket"
+}
+</script>
+<!-- Schema JSON-LD Pramugari/Pramugara PT. KAI-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Pramugari/Pramugara PT. KAI | Rekrutmen KAI 2025 Lulusan SMA/SMK & Fresh Graduate",
+  "description": "Rekrutmen Kereta Api Indonesia (KAI) 2025 membuka lowongan untuk posisi Pramugari/Pramugara. Pelamar diharapkan memenuhi kualifikasi yang ditentukan dan mengikuti proses seleksi untuk bergabung dengan PT. KAI.",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "Kereta Api Indonesia",
+    "value": "KAI-2025-007"
+  },
+  "datePosted": "2025-02-09",
+  "validThrough": "2025-03-31T23:59:59Z",
+  "employmentType": "FULL_TIME, PART_TIME",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Kereta Api Indonesia (KAI)",
+    "sameAs": "https://www.kai.id",
+    "logo": "https://logo.clearbit.com/kai.id"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "name": "Seluruh Indonesia",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Indonesia",
+      "postalCode": "12345",
+      "addressRegion": "Indonesia",
+      "streetAddress": "Indonesia",
+      "addressCountry": "ID"
+    }
+  },
+  "jobBenefits": "Asuransi kesehatan, tunjangan hari raya, kesempatan untuk berkembang di industri transportasi",
+  "qualifications": {
+    "@type": "OccupationalCredential",
+    "credentialCategory": "SMA/SMK",
+    "educationalCredentialAwarded": "SMA/SMK atau Fresh Graduate"
+  },
+  "responsibilities": "Bertanggung jawab dalam memberikan pelayanan kepada penumpang selama perjalanan kereta api, memastikan kenyamanan, keselamatan, serta memberikan informasi terkait jadwal dan fasilitas yang ada di kereta.",
+  "skills": [
+    "Kemampuan komunikasi yang baik",
+    "Kemampuan pelayanan pelanggan",
+    "Kemampuan bekerja di bawah tekanan",
+    "Kemampuan menjaga ketertiban dan keselamatan penumpang"
+  ],
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "IDR",
+    "value": {
+      "@type": "QuantitativeValue",
+      "value": 157480.00,
+      "unitText": "DAY"
+    }
+  },
+  "url": "https://www.kai.id/karir",
+  "applicationContact": {
+    "@type": "ContactPoint",
+    "contactType": "Recruitment",
+    "telephone": "+6222-4230031",
+    "email": "rekrutmen@kai.id",
+    "areaServed": "ID",
+    "availableLanguage": "ID"
+  },
+  "experienceRequirements": "Tidak diperlukan pengalaman kerja sebelumnya. Fresh Graduate diterima.",
+  "educationRequirements": "Minimal lulusan SMA/SMK dari jurusan yang relevan.",
+  "workHours": "40 jam per minggu",
+  "jobFunction": "Pelayanan Penumpang dan Keamanan Kereta Api"
+}
+</script>
+
+
 </body>
 </html>
